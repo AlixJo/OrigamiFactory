@@ -11,7 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonView;
 
 
 @Entity
@@ -19,15 +20,24 @@ public class Origami {
 	
 	@Id
 	@GeneratedValue
+	@JsonView(Views.ViewCommon.class)
 	private Long id;
+	@JsonView(Views.ViewCommon.class)
 	private String nom;
+	@JsonView(Views.ViewCommon.class)
 	private String tempsRea;
+	@JsonView(Views.ViewCommon.class)
 	private int nbFeuille;
 	@Enumerated(EnumType.STRING)
+	@JsonView(Views.ViewCommon.class)
 	private Niveau niveau;
+	@JsonView(Views.ViewCommon.class)
 	private Float note;
+	@JsonView(Views.ViewCommon.class)
 	private Boolean actif;
+	@JsonView(Views.ViewCommon.class)
 	private String youTube;
+	@JsonView(Views.ViewCommon.class)
 	private String imageOri;
 	
 	@OneToMany(mappedBy = "origami", fetch=FetchType.LAZY)

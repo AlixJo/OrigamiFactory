@@ -38,17 +38,17 @@ public class Origami {
 
 	
 	
+	public Origami() {
+		super();
+	}
+
+
 	public Origami(String nom, String tempsRea) {
 		super();
 		this.nom = nom;
 		this.tempsRea = tempsRea;
 	}
 
-	public Origami(Long i, String nom) {
-		super();
-		this.id = i;
-		this.nom = nom;
-	}
 
 	public Origami(Long id, String nom, String tempsRea, int nbFeuille, Niveau niveau, Float note, Boolean actif,
 			String youTube, String imageOri) {

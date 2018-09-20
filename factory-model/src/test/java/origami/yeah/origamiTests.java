@@ -23,7 +23,12 @@ import origami.yeah.repository.IRepositoryOrigami;
 			
 			origamiRepo.save(Lion);
 			
+			
+			Origami Dragon = new Origami("dragon", "iusgdjqsbd");
+			
+			origamiRepo.save(Dragon);
+			
 		}
-
+		
 	}
 	

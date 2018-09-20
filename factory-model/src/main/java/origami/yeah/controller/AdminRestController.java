@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import origami.yeah.model.Admin;
+import origami.yeah.model.Views;
 import origami.yeah.repository.IRepositoryAdmin;
 
 @RestController
@@ -22,6 +25,7 @@ public class AdminRestController {
 
 	@GetMapping("")
 	@ResponseBody
+	@JsonView(Views.ViewAdmin.class)
 	public List<Admin> list() {
 		return adminRepo.findAll();
 	}

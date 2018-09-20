@@ -17,4 +17,8 @@ public class Views {
 
 	}
 	
+	public static class ViewCategorieWithSubCat extends ViewCategorie{
+		
+	}
+	
 }

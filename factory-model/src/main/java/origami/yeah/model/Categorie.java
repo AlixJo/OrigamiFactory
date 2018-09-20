@@ -30,10 +30,12 @@ public class Categorie {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn
+	@JsonView(Views.ViewCommon.class)
 	private Categorie superCat; 
 	
 	@Column
 	@OneToMany(mappedBy = "superCat", fetch=FetchType.LAZY)
+	@JsonView(Views.ViewCategorieWithSubCat.class)
 	private List<Categorie> sousCats;
 	
 	@ManyToMany
@@ -81,6 +83,14 @@ public class Categorie {
 
 	public void setSuperCat(Categorie superCat) {
 		this.superCat = superCat;
+	}
+
+	public List<Categorie> getSousCats() {
+		return sousCats;
+	}
+
+	public void setSousCats(List<Categorie> sousCats) {
+		this.sousCats = sousCats;
 	}
 
 	public List<Origami> getOrigamis() {

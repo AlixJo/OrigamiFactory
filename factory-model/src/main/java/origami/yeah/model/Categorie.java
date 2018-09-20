@@ -8,7 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -24,12 +28,16 @@ public class Categorie {
 	@JsonView(Views.ViewCommon.class)
 	private String nom;
 	
-	@Column
-	@JsonView(Views.ViewCommon.class)
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn
 	private Categorie superCat; 
 	
-	@Transient
-	@ManyToMany(mappedBy = "categories", fetch = FetchType.LAZY)
+	@Column
+	@OneToMany(mappedBy = "superCat", fetch=FetchType.LAZY)
+	private List<Categorie> sousCats;
+	
+	@ManyToMany
+	@JoinTable
 	private List<Origami> origamis = new ArrayList<>();
 
 	//contructeur

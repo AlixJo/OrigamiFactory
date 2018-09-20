@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import origami.yeah.model.Etape;
 import origami.yeah.model.Origami;
 import origami.yeah.model.Views;
 import origami.yeah.repository.IRepositoryOrigami;
@@ -34,6 +35,13 @@ public class OrigamiRestController {
 	public List<Origami> list() {
 		return origamiRepo.findAll();
 	}
+	
+	@GetMapping("/{id}")
+	@ResponseBody
+	@JsonView(Views.ViewOrigami.class)
+	public Origami detail(@PathVariable Long id) {
+		return origamiRepo.findById(id).get();	}
+
 	
 	@PostMapping("")
 	@ResponseBody

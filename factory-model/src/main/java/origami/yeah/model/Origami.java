@@ -29,10 +29,10 @@ public class Origami {
 	private Boolean actif;
 	private String youTube;
 	private String imageOri;
-	@Transient
-	@OneToMany(mappedBy = "origami", fetch=FetchType.EAGER)
+	
+	@OneToMany(mappedBy = "origami", fetch=FetchType.LAZY)
 	private List<Etape> etapes = new ArrayList<>();
-	@Transient
+
 	@ManyToMany(mappedBy = "origamis", fetch = FetchType.EAGER)
 	private List<Categorie> categories = new ArrayList<>();
 

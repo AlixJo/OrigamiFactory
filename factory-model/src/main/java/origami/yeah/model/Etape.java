@@ -19,7 +19,7 @@ public class Etape {
 	private int numeroEtape;
 	private String description;
 	private String imageEtape;
-	@Transient
+	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="origami_id")
 	private Origami origami;

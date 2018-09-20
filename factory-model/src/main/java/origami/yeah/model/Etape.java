@@ -8,16 +8,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+
+
 
 
 @Entity
 public class Etape {
 	@Id
 	@GeneratedValue
+	@JsonView(Views.ViewCommon.class)
 	private Long id;
+	@JsonView(Views.ViewCommon.class)
 	private int numeroEtape;
+	@JsonView(Views.ViewCommon.class)
 	private String description;
+	@JsonView(Views.ViewCommon.class)
 	private String imageEtape;
 	
 	@ManyToOne(fetch=FetchType.EAGER)

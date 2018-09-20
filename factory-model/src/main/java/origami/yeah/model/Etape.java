@@ -32,10 +32,20 @@ public class Etape {
 	
 
 
-	public Etape(Long id, int numeroEtape, String description, String imageEtape, Origami origami) {
+	public Etape(int numeroEtape, String description, String imageEtape) {
 		super();
-		this.id = id;
 		this.numeroEtape = numeroEtape;
+		this.description = description;
+		this.imageEtape = imageEtape;
+	}
+
+
+
+
+
+	public Etape(int numeroEtape, String description, String imageEtape, Origami origami) {
+		super();
+			this.numeroEtape = numeroEtape;
 		this.description = description;
 		this.imageEtape = imageEtape;
 		this.origami = origami;

@@ -30,7 +30,7 @@ public class CategorieRestController {
 
 	@GetMapping("")
 	@ResponseBody
-	@JsonView(Views.ViewCategorie.class)
+	@JsonView(Views.ViewCategorieWithSuperCat.class)
 	public List<Categorie> list() {
 		return catRepo.findAll();
 	}

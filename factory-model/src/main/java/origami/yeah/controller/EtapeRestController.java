@@ -4,12 +4,20 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
 import origami.yeah.model.Etape;
 import origami.yeah.repository.IRepositoryEtape;
+
+
 
 
 @RestController
@@ -23,6 +31,26 @@ public class EtapeRestController {
 
 	public List<Etape> list() {
 		return etapeRepo.findAll();
+	}
+	
+	@GetMapping("/{id}")
+	@ResponseBody
+	public Etape detail(@PathVariable Long id) {
+		return etapeRepo.findById(id).get();	}
+	
+	@PostMapping("")
+	@ResponseBody
+		public Etape add(@RequestBody Etape etape) {
+		etapeRepo.save(etape);
+
+		return etape;
+	}
+	@PutMapping("/{id}")
+	@ResponseBody
+	public Etape edit(@RequestBody Etape etape, @PathVariable Long id) {
+		etapeRepo.save(etape);
+
+		return (Etape) etapeRepo.findById(id).get();
 	}
 	
 

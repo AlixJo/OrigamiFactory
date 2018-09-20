@@ -8,7 +8,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 import origami.yeah.model.Etape;
-
 import origami.yeah.repository.IRepositoryEtape;
 
 
@@ -18,13 +17,20 @@ public class EtapeTests {
 	@Autowired
 	private IRepositoryEtape etapeRepo;
 
+
 	@Test
 	public void contextLoads() {
 		
-		Etape etape1 = new Etape( 5,"Etape","Etape");
+		Etape etape21 = new Etape( 10,"Ceci est un ori GINAL","Ceci est un lien image GENIAL");
 		
-		etapeRepo.save(etape1);
+		etapeRepo.save(etape21);
 		
-		}
+Etape etape4 = new Etape( 999,"Ceci est un orix","Ceci est X");
+		
+		etapeRepo.save(etape4);
+		
+
+	}
+		
 	
 }

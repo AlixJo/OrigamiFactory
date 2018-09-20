@@ -14,8 +14,10 @@ public class Admin {
 	@JsonView(Views.ViewCommon.class)
 	private Long id;
 	@Column
+	@JsonView(Views.ViewCommon.class)
 	private String username;
 	@Column
+	@JsonView(Views.ViewCommon.class)
 	private String password;
 	
 	//Constructeurs

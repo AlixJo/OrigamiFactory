@@ -9,8 +9,12 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -44,7 +48,9 @@ public class Origami {
 	@JsonView(Views.ViewOrigami.class)
 	private List<Etape> etapes = new ArrayList<>();
 	@JsonView(Views.ViewOrigami.class)
-	@ManyToMany(mappedBy = "origamis", fetch = FetchType.EAGER)
+	@ManyToMany
+	@JoinTable(name = "origami_categorie", joinColumns = @JoinColumn(name = "origami_id"), inverseJoinColumns = @JoinColumn(name = "categorie_id"), uniqueConstraints = @UniqueConstraint(columnNames = {
+			"origami_id", "categorie_id" }))
 	private List<Categorie> categories = new ArrayList<>();
 
 	

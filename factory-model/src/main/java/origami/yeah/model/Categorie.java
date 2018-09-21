@@ -14,6 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -38,8 +39,7 @@ public class Categorie {
 	@JsonView(Views.ViewCategorieWithSubCat.class)
 	private List<Categorie> sousCats;
 	
-	@ManyToMany
-	@JoinTable
+	@ManyToMany(mappedBy = "categories", fetch = FetchType.LAZY)
 	@JsonView(Views.ViewCategorieWithSubCat.class)
 	private List<Origami> origamis = new ArrayList<>();
 

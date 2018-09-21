@@ -4,7 +4,7 @@ import {AppConfigService} from '../app-config.service';
 import {EtapeService} from '../etape/etape.service';
 
 export class OrigamiService {
-
+/*
   apiUrl: string;
   origamis: Array<Origami>;
   origami: Origami;
@@ -81,5 +81,10 @@ export class OrigamiService {
       .post(this.apiUrl + this.origami.id + "/etape", etape)
       .subscribe(resp => this.origami.categories.push(resp.json()));
   }
+<<<<<<< Updated upstream
 */
+=======
+  */
+
+>>>>>>> Stashed changes
 }

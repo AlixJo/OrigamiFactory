@@ -3,12 +3,11 @@ import {Origami} from './origami';
 import {OrigamiService} from './origami.service';
 
 @Component({
-  templateUrl: './origami.component.html',
-  styleUrls: ['./origami.component.css']
+  templateUrl: './origami.component.html'
 })
 
-export class OrigamiComponent implements OnInit {
-
+export class OrigamiComponent  {
+/*
   formOrigami: Origami;
 
   constructor(private origamiService: OrigamiService) {

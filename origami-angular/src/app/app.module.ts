@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { EtapeComponent } from './etape/etape.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { AdminComponent } from './admin/admin.component';
-import {Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import {OrigamiComponent} from './origami/origami.component';
 import {AppConfigService} from './app-config.service';
+import {NavbarComponent} from './navbar/navbar.component';
+
 
 
 const routes: Routes =[
@@ -28,12 +30,14 @@ const routes: Routes =[
     CategorieComponent,
     AdminComponent,
     HomeComponent,
-    OrigamiComponent
+    OrigamiComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     AppConfigService

@@ -9,6 +9,8 @@ import { CategorieComponent } from './categorie/categorie.component';
 import { AdminComponent } from './admin/admin.component';
 import {Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import {OrigamiComponent} from './origami/origami.component';
+import {AppConfigService} from './app-config.service';
 
 
 const routes: Routes =[
@@ -25,14 +27,17 @@ const routes: Routes =[
     EtapeComponent,
     CategorieComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    OrigamiComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    AppConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

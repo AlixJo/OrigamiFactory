@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Origami} from './origami';
 import {OrigamiService} from './origami.service';
-import {CategorieService} from '../categorie/categorie.service';
 
 @Component({
+  selector: 'app-origami',
   templateUrl: './origami.component.html',
   styleUrls: ['./origami.component.css']
 })

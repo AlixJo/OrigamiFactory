@@ -2,7 +2,7 @@
   <br>
   <h1>ORIGAMI</h1>
 
-  <button id="boutonAjouter" type="button" class="btn btn">AJOUTER UN ORIGAMI</button>
+  <button id="boutonAjouter" type="button" class="btn btn" (click)="add()">AJOUTER UN ORIGAMI</button>
   <br>
   <br>
   <section *ngIf="list().length > 0">
@@ -17,12 +17,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let categorie of list()">
-      <td>{{categorie.id}}</td>
-      <td>{{categorie.nom}}</td>
-      <td><a id="boutonEditer" class="btn btn" (click)="edit(categorie.id)">Editer</a></td>
+    <tr *ngFor="let origami of list()">
+      <td>{{origami.id}}</td>
+      <td>{{origami.nom}}</td>
+      <td><a id="boutonEditer" class="btn btn" (click)="edit(origami.id)">Editer</a></td>
       <td><a id="boutonDetail" class="btn btn">Détail</a></td>
-      <td><a id="boutonSup" class="btn btn" (click)="delete(categorie.id)">Supprimer</a></td>
+      <td><a id="boutonSup" class="btn btn" (click)="delete(origami.id)">Supprimer</a></td>
     </tr>
     </tbody>
   </table>
@@ -58,16 +58,62 @@
       </div>
 
 
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Niveau</label>
+        <div class="col-sm-10">
+          <select [(ngModel)]="formOrigami.niveau" [ngModelOptions]="{standalone: true}">
+            <option value="occasionnel">occasionnel</option>
+            <option value="normal">normal</option>
+            <option value="avance">avance</option>
+            <option value="expert">expert</option>
+          </select>
+        </div>
+      </div>
 
 
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Note</label>
+        <div class="col-sm-10">
+          <input type="number" step="1" min="1" max="5" class="form-control" placeholder="La note" [(ngModel)]="formOrigami.note"
+                 [ngModelOptions]="{standalone: true}" required/>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Actif ?</label>
+        <div class="col-sm-10">
+          <select [(ngModel)]="formOrigami.actif" [ngModelOptions]="{standalone: true}">
+            <option value="true">oui</option>
+            <option value="false">non</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lien YouTube</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="Le lien YouTube" [(ngModel)]="formOrigami.youTube"
+                 [ngModelOptions]="{standalone: true}" required/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Image de l'origami</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="L'image de l'origami" [(ngModel)]="formOrigami.imageOri"
+                 [ngModelOptions]="{standalone: true}" required/>
+        </div>
+      </div>
 
       <div class="form-group row">
         <div class="col-sm-2"></div>
         <div class="col-sm-7">
-          <button type="submit" class="btn btn-primary col-sm-12" (click)="save()">Envoyer</button>
+          <button type="" class="btn btn-primary col-sm-12" (click)="save()">Envoyer</button>
         </div>
         <div class="col-sm-3">
-          <a href="eleve/list" class="btn btn-warning col-sm-12" (click)="cancel()">Annuler</a>
+          <a class="btn btn-warning col-sm-12" (click)="cancel()">Annuler</a>
         </div>
       </div>
 

@@ -29,6 +29,7 @@
 
   <section *ngIf="formCategorie">
     <h2>Edition d'une catégorie</h2>
+    <br>
     <form>
       <input type="hidden" name="id" id="id" value="{{formCategorie.id}}"/>
       <div class="form-group row">
@@ -53,10 +54,10 @@
       <div class="form-group row">
         <div class="col-sm-2"></div>
         <div class="col-sm-7">
-          <button type="submit" class="btn btn-primary col-sm-12" (click)="save()">Envoyer</button>
+          <button id="boutonEnvoyer" type="submit" class="btn btn col-sm-12" (click)="save()">Envoyer</button>
         </div>
         <div class="col-sm-3">
-          <a class="btn btn-warning col-sm-12" (click)="cancel()">Annuler</a>
+          <a id="boutonAnnuler" class="btn btn col-sm-12" (click)="cancel()">Annuler</a>
         </div>
       </div>
 

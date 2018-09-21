@@ -1,5 +1,6 @@
 import {Origami} from './origami';
 import {Http} from '@angular/http';
+import {AppConfigService} from '../app-config.service';
 
 export class OrigamiService {
 

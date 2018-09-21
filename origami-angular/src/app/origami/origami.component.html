@@ -30,6 +30,7 @@
 
   <section *ngIf="formOrigami">
     <h2>Edition d'un origami</h2>
+    <br>
     <form>
       <input type="hidden" name="id" id="id" value="{{formOrigami.id}}"/>
 
@@ -61,7 +62,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Niveau</label>
         <div class="col-sm-10">
-          <select [(ngModel)]="formOrigami.niveau" [ngModelOptions]="{standalone: true}">
+          <select class= "custom-select" [(ngModel)]="formOrigami.niveau" [ngModelOptions]="{standalone: true}">
             <option value="occasionnel">occasionnel</option>
             <option value="normal">normal</option>
             <option value="avance">avance</option>
@@ -83,7 +84,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Actif ?</label>
         <div class="col-sm-10">
-          <select [(ngModel)]="formOrigami.actif" [ngModelOptions]="{standalone: true}">
+          <select class= "custom-select"[(ngModel)]="formOrigami.actif" [ngModelOptions]="{standalone: true}">
             <option value="true">oui</option>
             <option value="false">non</option>
           </select>

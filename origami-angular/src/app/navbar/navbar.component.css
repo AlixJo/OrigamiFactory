@@ -13,7 +13,7 @@
   margin-left: -150px;
   left: 70px;
   width: 200px;
-  background: #222;
+  background: #d6d6d6;
   position: fixed;
   height: 100%;
   z-index: 10000;
@@ -51,9 +51,9 @@
   float: left;
   text-decoration: none;
   width: 200px;
-  background: #252525;
+  background: #d6d6d6;
   border-top: 1px solid #373737;
-  border-bottom: 1px solid #1A1A1A;
+  border-bottom: 1px solid #d6d6d6;
   -webkit-transition: background .5s;
   -moz-transition: background .5s;
   -o-transition: background .5s;
@@ -79,7 +79,7 @@
 
 .sidebar-nav li a:hover {
   color: #fff;
-  background: rgba(255,255,255,0.2);
+  background: rgba(245, 198, 203, 0.78);
   text-decoration: none;
 }
 
@@ -95,7 +95,7 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-  color: #999999;
+  color: #d6d6d6;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {

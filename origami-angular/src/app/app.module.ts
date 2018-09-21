@@ -21,8 +21,10 @@ const routes: Routes =[
   { path: 'admin', component: AdminComponent},
   { path: 'categorie', component: CategorieComponent},
   { path: 'origami', component: OrigamiComponent},
-  { path: 'etape', component: EtapeComponent},
+  { path: 'origami/detail', component: EtapeComponent},
   { path: 'home', component: HomeComponent},
+  { path:'', redirectTo: 'home', pathMatch: 'full'},
+  { path:'**', redirectTo: 'home', pathMatch: 'full'},
 ]
 
 @NgModule({

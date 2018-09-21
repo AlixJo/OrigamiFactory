@@ -4,10 +4,28 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { EtapeComponent } from './etape/etape.component';
+import { CategorieComponent } from './categorie/categorie.component';
+import { AdminComponent } from './admin/admin.component';
+import {Routes} from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+
+const routes: Routes =[
+  { path: 'admin', component: AdminComponent},
+  { path: 'categorie', component: CategorieComponent},
+  { path: 'origami', component: OrigamiComponent},
+  { path: 'etape', component: EtapeComponent},
+  { path: 'home', component: HomeComponent},
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EtapeComponent,
+    CategorieComponent,
+    AdminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>ORIGAMI</h1>
+  <h1>ORIGAMI</h1>  <button class="btn btn-primary" (click)="add()">Ajouter</button>
 
 
   <table class="table table-stripped mt-5">
@@ -14,22 +14,10 @@
 
     <tbody>
     <tr>
-      <td><button class="btn btn-warning" (click)="edit(salon)">Modifier</button></td>
-      <td><button class="btn btn-danger" (click)="delete(salon)">Supprimer</button></td>
+      <td><button class="btn btn-warning" (click)="edit(origami)">Modifier</button></td>
+      <td><button class="btn btn-danger" (click)="delete(origami)">Supprimer</button></td>
     </tr>
 
-    <tr *ngIf="!formOrigami">
-      <td colspan="6">
-        <button class="btn btn-primary" (click)="add()">Créer un nouveau salon</button>
-      </td>
-    </tr>
-
-    <tr *ngIf="formSalon">
-      <td><input type="text" [(ngModel)]="formSalon.nom" placeholder="Nom du salon" /></td>
-      <td colspan="3"><input type="text" [(ngModel)]="formSalon.description" placeholder="Description du salon" /></td>
-      <td><button class="btn btn-success" (click)="create()">Valider</button></td>
-      <td><button class="btn btn-danger" (click)="cancel()">Annuler</button></td>
-    </tr>
     </tbody>
   </table>
 </div>

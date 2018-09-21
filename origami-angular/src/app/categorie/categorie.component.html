@@ -1,8 +1,9 @@
-<div class="container">
-
-  <h1>Liste des catégories</h1>
-  <button type="button" class="btn btn-info" (click)="add()">Ajouter</button>
-
+<div class="container" id="ecriture">
+  <br>
+  <h1 >CATEGORIE</h1>
+  <button id="boutonAjouter" type="button" class="btn btn" (click)="add()">AJOUTER UNE CATEGORIE</button>
+  <br>
+  <br>
   <section *ngIf="list().length > 0">
     <table class="table table-striped">
       <thead>
@@ -18,9 +19,9 @@
       <tr *ngFor="let categorie of list()">
         <td>{{categorie.id}}</td>
         <td>{{categorie.nom}}</td>
-        <td><a class="btn btn-info" (click)="edit(categorie.id)">Editer</a></td>
-        <td><a class="btn btn-danger" (click)="delete(categorie.id)">Supprimer</a></td>
-        <td><a class="btn btn-warning">Détail</a></td>
+        <td><a id="boutonEditer" class="btn btn" (click)="edit(categorie.id)">Editer</a></td>
+        <td><a id="boutonDetail" class="btn btn">Détail</a></td>
+        <td><a id="boutonSup" class="btn btn" (click)="delete(categorie.id)">Supprimer</a></td>
       </tr>
       </tbody>
     </table>

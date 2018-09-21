@@ -1,0 +1,124 @@
+<div class="container" id="ecriture">
+  <br>
+  <h1>ORIGAMI</h1>
+
+  <button id="boutonAjouter" type="button" class="btn btn" (click)="add()">AJOUTER UN ORIGAMI</button>
+  <br>
+  <br>
+  <section *ngIf="list().length > 0">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>IDENTIFIANT</th>
+      <th>NOM</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let origami of list()">
+      <td>{{origami.id}}</td>
+      <td>{{origami.nom}}</td>
+      <td><a id="boutonEditer" class="btn btn" (click)="edit(origami.id)">Editer</a></td>
+      <td><a id="boutonDetail" class="btn btn">Détail</a></td>
+      <td><a id="boutonSup" class="btn btn" (click)="delete(origami.id)">Supprimer</a></td>
+    </tr>
+    </tbody>
+  </table>
+  </section>
+
+  <section *ngIf="formOrigami">
+    <h2>Edition d'un origami</h2>
+    <br>
+    <form>
+      <input type="hidden" name="id" id="id" value="{{formOrigami.id}}"/>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Nom</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="Le nom" [(ngModel)]="formOrigami.nom"
+                 [ngModelOptions]="{standalone: true}" required/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Temps de réalisation</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="Le temps de réalisation (en heure)" [(ngModel)]="formOrigami.tempsRea"
+                 [ngModelOptions]="{standalone: true}" required/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Nombre de feuille</label>
+        <div class="col-sm-10">
+          <input type="number" step = "1" class="form-control" placeholder="Le nombre de feuille" [(ngModel)]="formOrigami.nbFeuille"
+                 [ngModelOptions]="{standalone: true}" required/>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Niveau</label>
+        <div class="col-sm-10">
+          <select class= "custom-select" [(ngModel)]="formOrigami.niveau" [ngModelOptions]="{standalone: true}">
+            <option value="occasionnel">occasionnel</option>
+            <option value="normal">normal</option>
+            <option value="avance">avance</option>
+            <option value="expert">expert</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Note</label>
+        <div class="col-sm-10">
+          <input type="number" step="1" min="1" max="5" class="form-control" placeholder="La note" [(ngModel)]="formOrigami.note"
+                 [ngModelOptions]="{standalone: true}" required/>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Actif ?</label>
+        <div class="col-sm-10">
+          <select class= "custom-select"[(ngModel)]="formOrigami.actif" [ngModelOptions]="{standalone: true}">
+            <option value="true">oui</option>
+            <option value="false">non</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Lien YouTube</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="Le lien YouTube" [(ngModel)]="formOrigami.youTube"
+                 [ngModelOptions]="{standalone: true}" required/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Image de l'origami</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="L'image de l'origami" [(ngModel)]="formOrigami.imageOri"
+                 [ngModelOptions]="{standalone: true}" required/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-7">
+          <button id="boutonEnvoyer" type="" class="btn btn col-sm-12" (click)="save()">Envoyer</button>
+        </div>
+        <div class="col-sm-3">
+          <a id="boutonAnnuler" class="btn btn col-sm-12" (click)="cancel()">Annuler</a>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+</div>

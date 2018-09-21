@@ -21,14 +21,14 @@ public class EtapeTests {
 	@Test
 	public void contextLoads() {
 		
-		Etape etape21 = new Etape( 10,"Ceci est un ori GINAL","Ceci est un lien image GENIAL");
-		
-		etapeRepo.save(etape21);
-		
-Etape etape4 = new Etape( 999,"Ceci est un orix","Ceci est X");
-		
-		etapeRepo.save(etape4);
-		
+//		Etape etape21 = new Etape( 10,"Ceci est un ori GINAL","Ceci est un lien image GENIAL");
+//		
+//		etapeRepo.save(etape21);
+//		
+//Etape etape4 = new Etape( 999,"Ceci est un orix","Ceci est X");
+//		
+//		etapeRepo.save(etape4);
+//		
 
 	}
 		

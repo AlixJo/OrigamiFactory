@@ -19,14 +19,14 @@ import origami.yeah.repository.IRepositoryOrigami;
 		@Test
 		public void contextLoads() {
 			
-			Origami Lion = new Origami("dfdfsd", "kjsdbfjkhsqdbfh");
-			
-			origamiRepo.save(Lion);
-			
-			
-			Origami Dragon = new Origami("dragon", "iusgdjqsbd");
-			
-			origamiRepo.save(Dragon);
+//			Origami Lion = new Origami("dfdfsd", "kjsdbfjkhsqdbfh");
+//			
+//			origamiRepo.save(Lion);
+//			
+//			
+//			Origami Dragon = new Origami("dragon", "iusgdjqsbd");
+//			
+//			origamiRepo.save(Dragon);
 			
 			
 		}

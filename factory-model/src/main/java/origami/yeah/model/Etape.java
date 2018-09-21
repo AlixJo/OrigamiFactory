@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -29,7 +30,8 @@ public class Etape {
 	private String imageEtape;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="origami_id")
+	@JoinColumn
+	
 	@JsonView(Views.ViewEtape.class)
 	private Origami origami;
 

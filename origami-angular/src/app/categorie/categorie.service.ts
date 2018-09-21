@@ -20,7 +20,60 @@ export class CategorieService {
 
   public findAll() {
     return this.categories;
+  }
 
+  public findById(id: number, details?: boolean): any {
+    // if (details) {
+    //   return this.http
+    //     .get(this.apiUrl + id);
+    // }
+
+    for (const categorie of this.categories) {
+      if (categorie.id === id) {
+        return categorie;
+      }
+    }
+
+    return null;
+  }
+
+  public save(categorie: Categorie) {
+    if (categorie) {
+      if (!categorie.superCat.id) {
+        categorie.superCat = null;
+      }
+      if (!categorie.id) {
+        this.http
+          .post(this.apiUrl, categorie)
+          .subscribe(resp =>
+              this.categories.push(resp.json()),
+            err => console.log(err)
+          );
+      } else {
+        this.http
+          .put(this.apiUrl + categorie.id, categorie)
+          .subscribe(resp => {
+              this.http
+                .get(this.apiUrl)
+                .subscribe(respo =>
+                    this.categories = respo.json(),
+                  err => console.log(err)
+                );
+            },
+            err => console.log(err))
+        ;
+      }
+    }
+  }
+
+  public delete(categorie: Categorie) {
+    const pos: number = this.categories.indexOf(categorie);
+
+    this.http
+      .delete(this.apiUrl + categorie.id)
+      .subscribe(resp => this.categories.splice(pos, 1),
+        err => console.log(err))
+    ;
   }
 
 }

@@ -1,26 +1,27 @@
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<div>
+<div class="container">
 
   <h1>ORIGAMI</h1>
 
   <button type="button" class="btn btn-info">Ajouter</button>
 
-  <table class="table table-stripped mt-5">
+  <table class="table table-striped">
     <thead>
     <tr>
       <th>IDENTIFIANT</th>
       <th>NOM</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
     </thead>
-
     <tbody>
-    <tr>
-      <td><button class="btn btn-warning" (click)="edit(origami)">Modifier</button></td>
-      <td><button class="btn btn-danger" (click)="delete(origami)">Supprimer</button></td>
+    <tr *ngFor="let origami of list()" >
+      <td>{{origami.id}}</td>
+      <td>{{origami.nom}}</td>
+      <td><a class="btn btn-info" >Editer</a></td>
+      <td><a class="btn btn-danger" >Supprimer</a></td>
+      <td><a class="btn btn-warning" >Détail</a></td>
     </tr>
-
 
     </tbody>
   </table>

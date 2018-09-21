@@ -13,6 +13,7 @@ import {OrigamiComponent} from './origami/origami.component';
 import {AppConfigService} from './app-config.service';
 import {CategorieService} from './categorie/categorie.service';
 import {NavbarComponent} from './navbar/navbar.component';
+import {OrigamiService} from './origami/origami.service';
 
 
 
@@ -42,7 +43,8 @@ const routes: Routes =[
   ],
   providers: [
     AppConfigService,
-    CategorieService
+    CategorieService,
+    OrigamiService
   ],
   bootstrap: [AppComponent]
 })

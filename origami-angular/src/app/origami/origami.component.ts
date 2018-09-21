@@ -1,46 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {Origami} from './origami';
 import {OrigamiService} from './origami.service';
+import {CategorieService} from '../categorie/categorie.service';
 
 @Component({
   templateUrl: './origami.component.html'
 })
 
-export class OrigamiComponent  {
-/*
-  formOrigami: Origami;
+export class OrigamiComponent implements OnInit {
 
-  constructor(private origamiService: OrigamiService) {
-  }
+  constructor(private origamiService: OrigamiService) { }
 
   ngOnInit() {
   }
 
-/*
-  public add() {
-    this.formOrigami = new Origami();
+  public list() {
+    return this.origamiService.findAll();
   }
 
-
-  public edit(origami: Origami) {
-    this.formOrigami = origami;
-  }
-
-
-  public create() {
-    this.origamiService.save(this.formOrigami);
-    this.formOrigami = null;
-  }
-
-
-  public cancel() {
-    this.formOrigami = null;
-  }
-
-
-  public delete(origami: Origami) {
-    this.origamiService.delete(origami);
-    this.formOrigami = null;
-  }
-*/
 }

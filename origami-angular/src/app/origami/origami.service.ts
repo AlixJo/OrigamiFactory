@@ -1,6 +1,7 @@
 import {Origami} from './origami';
 import {Http} from '@angular/http';
 import {AppConfigService} from '../app-config.service';
+import {EtapeService} from '../etape/etape.service';
 
 export class OrigamiService {
 
@@ -8,14 +9,14 @@ export class OrigamiService {
   origamis: Array<Origami>;
   origami: Origami;
 
-  constructor(private http: Http, private appConfig: AppConfigService, private utilisateurService: UtilisateurService) {
-    this.apiUrl = this.appConfig.apiUrl + "origami/";
+  constructor(private http: Http, private appConfig: AppConfigService, private etapeService: EtapeService) {
+    this.apiUrl = this.appConfig.apiUrl + 'origami/';
     this.http
       .get(this.apiUrl)
       .subscribe(resp => this.origamis = resp.json());
   }
 
-
+/*
   public findAll() {
     return this.origamis;
   }
@@ -33,8 +34,8 @@ export class OrigamiService {
 
   public refresh() {
     if (this.origami) {
-      this.http.get(this.apiUrl + this.origami.id + "/etape").subscribe(users => this.origami.etapes = etapes.json());
-      this.http.get(this.apiUrl + this.origami.id + "/categorie").subscribe(messages => this.origami.categories = categories.json());
+      this.http.get(this.apiUrl + this.origami.id + '/etape').subscribe(etapes => this.origami.etapes = etapes.json());
+      this.http.get(this.apiUrl + this.origami.id + '/categorie').subscribe(categories => this.origami.categories = categories.json());
     }
   }
 
@@ -42,16 +43,14 @@ export class OrigamiService {
   public save(origami: Origami) {
     if (origami.id) {
       this.update(origami);
-    }
-
-    else {
+    } else {
       this.create(origami);
     }
   }
 
 
   public create(origami: Origami) {
-    origami.createur = this.utilisateurService.utilisateur;
+    origami.categories = this.etapeService.etape;
 
     this.http
       .post(this.apiUrl, origami)
@@ -76,11 +75,11 @@ export class OrigamiService {
 
 
   public send(etape: Etape) {
-    etape.expediteur = this.utilisateurService.categorie;
+    etape.expediteur = this.etapeService.categorie;
 
     this.http
       .post(this.apiUrl + this.origami.id + "/etape", etape)
       .subscribe(resp => this.origami.categories.push(resp.json()));
   }
-
+*/
 }

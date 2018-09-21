@@ -17,7 +17,7 @@ export class OrigamiComponent implements OnInit {
   ngOnInit() {
   }
 
-
+/*
   public add() {
     this.formOrigami = new Origami();
   }
@@ -43,5 +43,5 @@ export class OrigamiComponent implements OnInit {
     this.origamiService.delete(origami);
     this.formOrigami = null;
   }
-
+*/
 }

@@ -30,6 +30,7 @@ public class Etape {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="origami_id")
+	@JsonView(Views.ViewEtape.class)
 	private Origami origami;
 
 	public Etape() {

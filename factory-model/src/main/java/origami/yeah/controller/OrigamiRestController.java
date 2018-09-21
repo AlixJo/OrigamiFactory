@@ -38,7 +38,7 @@ public class OrigamiRestController {
 	
 	@GetMapping("/{id}")
 	@ResponseBody
-	@JsonView(Views.ViewOrigami.class)
+	@JsonView(Views.ViewOrigamiWithEtapeCat.class)
 	public Origami detail(@PathVariable Long id) {
 		return origamiRepo.findById(id).get();	}
 

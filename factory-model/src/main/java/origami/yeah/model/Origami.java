@@ -41,8 +41,9 @@ public class Origami {
 	private String imageOri;
 	
 	@OneToMany(mappedBy = "origami", fetch=FetchType.LAZY)
+	@JsonView(Views.ViewOrigami.class)
 	private List<Etape> etapes = new ArrayList<>();
-
+	@JsonView(Views.ViewOrigami.class)
 	@ManyToMany(mappedBy = "origamis", fetch = FetchType.EAGER)
 	private List<Categorie> categories = new ArrayList<>();
 

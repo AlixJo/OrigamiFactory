@@ -30,7 +30,7 @@ public class Categorie {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn
-	@JsonView(Views.ViewCommon.class)
+	@JsonView(Views.ViewCategorieWithSuperCat.class)
 	private Categorie superCat; 
 	
 	@Column
@@ -40,6 +40,7 @@ public class Categorie {
 	
 	@ManyToMany
 	@JoinTable
+	@JsonView(Views.ViewCategorieWithSubCat.class)
 	private List<Origami> origamis = new ArrayList<>();
 
 	//contructeur

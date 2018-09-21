@@ -13,7 +13,16 @@ public class Views {
 	public static class ViewOrigami extends ViewCommon {
 
 	}
+	
+	public static class ViewOrigamiWithEtapeCat extends ViewOrigami{
+		
+	}
+	
 	public static class ViewCategorie extends ViewCommon {
+
+	}
+	
+	public static class ViewCategorieWithSuperCat extends ViewCategorie {
 
 	}
 	

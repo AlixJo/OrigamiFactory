@@ -1,0 +1,26 @@
+<div class="container" id="ecriture">
+  <br>
+  <h1 >Detail catégorie {{categorie.nom}}</h1>
+
+  <br>
+  <br>
+  <section >
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Identifiant</th>
+        <th>Nom</th>
+        <th>Parent</th>
+      </tr>
+      </thead>
+      <tbody>
+<td>{{categorie.id}}</td>
+<td>{{categorie.nom}}</td>
+<td *ngIf="categorie.superCat">{{categorie.superCat.nom}}</td>
+
+      </tbody>
+    </table>
+  </section>
+
+
+</div>

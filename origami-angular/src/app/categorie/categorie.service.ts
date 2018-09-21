@@ -23,10 +23,10 @@ export class CategorieService {
   }
 
   public findById(id: number, details?: boolean): any {
-    // if (details) {
-    //   return this.http
-    //     .get(this.apiUrl + id);
-    // }
+    if (details) {
+      return this.http
+        .get(this.apiUrl + id);
+    }
 
     for (const categorie of this.categories) {
       if (categorie.id === id) {

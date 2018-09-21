@@ -1,9 +1,10 @@
-<div class="container">
-
+<div class="container" id="ecriture">
+  <br>
   <h1>ORIGAMI</h1>
 
-  <button type="button" class="btn btn-info">Ajouter</button>
-
+  <button id="boutonAjouter" type="button" class="btn btn">AJOUTER UN ORIGAMI</button>
+  <br>
+  <br>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -18,9 +19,9 @@
     <tr *ngFor="let origami of list()" >
       <td>{{origami.id}}</td>
       <td>{{origami.nom}}</td>
-      <td><a class="btn btn-info" >Editer</a></td>
-      <td><a class="btn btn-danger" >Supprimer</a></td>
-      <td><a class="btn btn-warning" >Détail</a></td>
+      <td><a id="boutonEditer" class="btn btn" (click)="edit(origami.id)">Editer</a></td>
+      <td><a id="boutonSup" class="btn btn" (click)="delete(origami.id)">Supprimer</a></td>
+      <td><a id="boutonDetail" class="btn btn" >Détail</a></td>
     </tr>
 
     </tbody>

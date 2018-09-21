@@ -11,6 +11,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import {OrigamiComponent} from './origami/origami.component';
 import {AppConfigService} from './app-config.service';
+import {CategorieService} from './categorie/categorie.service';
 import {NavbarComponent} from './navbar/navbar.component';
 
 
@@ -40,7 +41,8 @@ const routes: Routes =[
     RouterModule.forRoot(routes)
   ],
   providers: [
-    AppConfigService
+    AppConfigService,
+    CategorieService
   ],
   bootstrap: [AppComponent]
 })

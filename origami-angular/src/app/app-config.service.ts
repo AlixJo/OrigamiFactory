@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class AppConfigService {
 
- public apiUrl = 'http://localhost:4200';
+ public apiUrl = 'http://localhost:8888';
 
 }

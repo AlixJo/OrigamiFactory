@@ -81,10 +81,7 @@ export class OrigamiService {
       .post(this.apiUrl + this.origami.id + "/etape", etape)
       .subscribe(resp => this.origami.categories.push(resp.json()));
   }
-<<<<<<< Updated upstream
-*/
-=======
-  */
 
->>>>>>> Stashed changes
+*/
+
 }

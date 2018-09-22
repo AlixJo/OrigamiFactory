@@ -23,6 +23,10 @@ export class CategorieComponent implements OnInit {
     return this.catService.findAll();
   }
 
+  public listAvailableParent(id: number) {
+    return this.catService.findAvailableParent(this.catService.findByIdWithChildren(id));
+  }
+
   public add() {
     this.formCategorie = new Categorie();
     this.formCategorie.superCat = new Categorie();

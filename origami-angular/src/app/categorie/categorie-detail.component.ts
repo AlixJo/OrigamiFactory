@@ -11,15 +11,18 @@ import {Categorie} from './categorie';
 export class CategorieDetailComponent implements OnInit {
 
   private categorie: Categorie = new Categorie();
+  private categorieWithChild: Categorie = new Categorie();
+
 
   constructor(private route: ActivatedRoute, private catService: CategorieService) {
     this.categorie.superCat = new Categorie();
     this.route.params.subscribe(params => {
-      console.log(params);
+      this.catService.findParentById(Number(params['id']))
+        .subscribe(resp => this.categorie = resp.json()
+        );
       this.catService.findById(Number(params['id']), true)
-        .subscribe(resp => this.categorie = resp.json());
-      console.log(this.categorie);
-
+        .subscribe(resp => this.categorieWithChild = resp.json()
+        );
     });
   }
 

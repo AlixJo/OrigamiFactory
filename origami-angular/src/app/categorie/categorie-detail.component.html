@@ -1,10 +1,10 @@
 <div class="container" id="ecriture">
   <br>
-  <h1 >Detail catégorie {{categorie.nom}}</h1>
+  <h1>Detail catégorie {{categorie.nom}}</h1>
 
   <br>
   <br>
-  <section >
+  <section>
     <table class="table table-striped">
       <thead>
       <tr>
@@ -14,12 +14,45 @@
       </tr>
       </thead>
       <tbody>
-<td>{{categorie.id}}</td>
-<td>{{categorie.nom}}</td>
-<td *ngIf="categorie.superCat">{{categorie.superCat.nom}}</td>
+      <td>{{categorie.id}}</td>
+      <td>{{categorie.nom}}</td>
+      <td *ngIf="categorie.superCat">{{categorie.superCat.nom}}</td>
 
       </tbody>
     </table>
+  </section>
+  <br/>
+  <section *ngIf="categorieWithChild.sousCats">
+
+    <table class="table table-striped">
+      <thead>
+      <th>Sous-catégorie(s)</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let categorie of categorieWithChild.sousCats">
+        <td>{{categorie.nom}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+
+  </section>
+
+  <br/>
+  <section *ngIf="categorieWithChild.origamis">
+
+    <table class="table table-striped">
+      <thead>
+      <th>Origami(s)</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let origami of categorieWithChild.origamis">
+        <td>{{origami.nom}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+
   </section>
 
 

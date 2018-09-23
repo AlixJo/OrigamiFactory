@@ -42,11 +42,25 @@ public class CategorieRestController {
 		return catRepo.findById(id).get();
 	}
 	
+	@GetMapping("/{id}/super")
+	@ResponseBody
+	@JsonView(Views.ViewCategorieWithSuperCat.class)
+	public Categorie detailParent(@PathVariable Long id) {
+		return catRepo.findById(id).get();
+	}
+	
 	@GetMapping("/{id}/availableParent")
 	@ResponseBody
 	@JsonView(Views.ViewCategorieWithSuperCat.class)
 	public List<Categorie> availableParent(@PathVariable Long id) {
 		return catRepo.findAllOther(id);
+	}
+	
+	@GetMapping("/children")
+	@ResponseBody
+	@JsonView(Views.ViewCategorieWithSubCat.class)
+	public List<Categorie> availableParent() {
+		return catRepo.findAll();
 	}
 	
 	@PostMapping("")

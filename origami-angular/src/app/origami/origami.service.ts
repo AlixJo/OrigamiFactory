@@ -40,25 +40,26 @@ export class OrigamiService {
   public save(origami: Origami) {
     if (origami) {
       if (!origami.id) {
-        if (this.origamis.length > 0) {
-          origami.id = this.origamis[this.origamis.length - 1].id + 1;
-        } else {
-          origami.id = 1;
-        }
+        // if (this.origamis.length > 0) {
+        //   origami.id = this.origamis[this.origamis.length - 1].id + 1;
+        // } else {
+        //   origami.id = 1;
+        // }
 
         this.http
           .post(this.apiUrl, origami)
           .subscribe(
-            resp => this.origamis.push(origami),
+            resp => this.origamis.push(resp.json()),
+            err => console.log(err)
+          );
+      }else {
+        this.http
+          .put(this.apiUrl + origami.id, origami)
+          .subscribe(
+            resp => null,
             err => console.log(err)
           );
       }
-      this.http
-        .put(this.apiUrl + origami.id, origami)
-        .subscribe(
-          resp => null,
-          err => console.log(err)
-        );
     }
   }
 

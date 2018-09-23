@@ -46,7 +46,7 @@
           <select class="custom-select" [(ngModel)]="formCategorie.superCat.id"
                   [ngModelOptions]="{standalone: true}" required>
             <option  value="null" ></option>
-            <option *ngFor="let categorie of list()" [ngValue]="categorie.id">{{categorie.nom}}</option>
+            <option *ngFor="let categorie of listAvailableParent(formCategorie.id)" [ngValue]="categorie.id">{{categorie.nom}}</option>
           </select>
         </div>
       </div>

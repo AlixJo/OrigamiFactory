@@ -1,3 +1,72 @@
-<p>
-  admin works!
-</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"
+      xmlns="http://www.w3.org/1999/html">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<section class="login-block" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 login-sec">
+        <h2 class="text-center">Administrateur</h2>
+        <form class="login-form"  (ngSubmit)="Connect()" >
+
+          <input type="hidden" name="id" id="id" value="{{formAdmin.id}}"/>
+
+          <div class="form-group">
+            <label for="admin.username" class="text-uppercase">Utilisateur</label>
+            <input type="text" class="form-control" placeholder="username" [(ngModel)]="formAdmin.username" [ngModelOptions]="{standalone: true}">
+
+          </div>
+          <div class="form-group">
+            <label for="admin.password" class="text-uppercase">Mot de Passe</label>
+            <input type="password" class="form-control" placeholder="password" [(ngModel)]="formAdmin.password" [ngModelOptions]="{standalone: true}">
+          </div>
+
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input">
+            <br>
+              <small>se souvenir de moi</small>
+            </label>
+            <button type="submit" class="btn btn-login float-right" >Connexion</button>
+          </div>
+
+        </form>
+        <div class="copy-text">Created with <i class="fa fa-heart"></i> by <a>sopra.404.yeah</a></div>
+      </div>
+      <div class="col-md-8 banner-sec">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                   </ol>
+
+          <div class="carousel-inner" role="listbox">
+
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="../images/AdminFlowers.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>Bienvenue sur le site de Gestion de LA.FACTORY</h2>
+                  <p>Le plus large choix de tutos d'Origami en français</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="../images/AdminFlowers2.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+                  <h2>Le plus large choix de tutos d'Origami</h2>
+                  <p>Bienvenue sur le site de Gestion de LA.FACTORY</p>
+                </div>
+              </div>
+            </div>
+                     </div>
+
+        </div>
+      </div></div>
+    </div>
+</section>

@@ -14,6 +14,9 @@ import {AppConfigService} from './app-config.service';
 import {CategorieService} from './categorie/categorie.service';
 import {NavbarComponent} from './navbar/navbar.component';
 import {OrigamiService} from './origami/origami.service';
+import {OrigamiDetailComponent} from './origami-detail/origami-detail.component';
+import {EtapeService} from './etape/etape.service';
+import {AdminService} from './admin/admin.service';
 import {CategorieDetailComponent} from './categorie/categorie-detail.component';
 
 
@@ -22,10 +25,11 @@ const routes: Routes = [
   {path: 'categorie', component: CategorieComponent},
   {path: 'categorie/:id', component: CategorieDetailComponent},
   {path: 'origami', component: OrigamiComponent},
-  {path: 'origami/detail', component: EtapeComponent},
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'home', pathMatch: 'full'},
+ // { path: 'origami/id', component: OrigamiDetailComponent, canActivate:[EtapeService]},
+  { path: "origami/:id", component: OrigamiDetailComponent,}
 ]
 
 @NgModule({
@@ -37,7 +41,8 @@ const routes: Routes = [
     HomeComponent,
     OrigamiComponent,
     NavbarComponent,
-    CategorieDetailComponent
+    CategorieDetailComponent,
+    OrigamiDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -45,10 +50,15 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
+  exports: [
+    RouterModule
+  ],
   providers: [
     AppConfigService,
     CategorieService,
-    OrigamiService
+    OrigamiService,
+    EtapeService,
+    AdminService
   ],
   bootstrap: [AppComponent]
 })

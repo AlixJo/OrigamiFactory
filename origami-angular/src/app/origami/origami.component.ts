@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Origami} from './origami';
 import {OrigamiService} from './origami.service';
 
 @Component({

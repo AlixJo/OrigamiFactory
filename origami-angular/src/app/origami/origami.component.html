@@ -6,26 +6,26 @@
   <br>
   <br>
   <section *ngIf="list().length > 0">
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>IDENTIFIANT</th>
-      <th>NOM</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let origami of list()">
-      <td>{{origami.id}}</td>
-      <td>{{origami.nom}}</td>
-      <td><a id="boutonEditer" class="btn btn" (click)="edit(origami.id)">Editer</a></td>
-      <td><a id="boutonDetail" class="btn btn">Détail</a></td>
-      <td><a id="boutonSup" class="btn btn" (click)="delete(origami.id)">Supprimer</a></td>
-    </tr>
-    </tbody>
-  </table>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>IDENTIFIANT</th>
+        <th>NOM</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let origami of list()">
+        <td>{{origami.id}}</td>
+        <td>{{origami.nom}}</td>
+        <td><a id="boutonEditer" class="btn btn" (click)="edit(origami.id)">Editer</a></td>
+        <td><a id="boutonDetail" class="btn btn">Détail</a></td>
+        <td><a id="boutonSup" class="btn btn" (click)="delete(origami.id)">Supprimer</a></td>
+      </tr>
+      </tbody>
+    </table>
   </section>
 
   <section *ngIf="formOrigami">
@@ -45,7 +45,8 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Temps de réalisation</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Le temps de réalisation (en heure)" [(ngModel)]="formOrigami.tempsRea"
+          <input type="text" class="form-control" placeholder="Le temps de réalisation (en heure)"
+                 [(ngModel)]="formOrigami.tempsRea"
                  [ngModelOptions]="{standalone: true}" required/>
         </div>
       </div>
@@ -53,7 +54,8 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Nombre de feuille</label>
         <div class="col-sm-10">
-          <input type="number" step = "1" class="form-control" placeholder="Le nombre de feuille" [(ngModel)]="formOrigami.nbFeuille"
+          <input type="number" step="1" class="form-control" placeholder="Le nombre de feuille"
+                 [(ngModel)]="formOrigami.nbFeuille"
                  [ngModelOptions]="{standalone: true}" required/>
         </div>
       </div>
@@ -62,7 +64,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Niveau</label>
         <div class="col-sm-10">
-          <select class= "custom-select" [(ngModel)]="formOrigami.niveau" [ngModelOptions]="{standalone: true}">
+          <select class="custom-select" [(ngModel)]="formOrigami.niveau" [ngModelOptions]="{standalone: true}">
             <option value="occasionnel">occasionnel</option>
             <option value="normal">normal</option>
             <option value="avance">avance</option>
@@ -75,7 +77,8 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Note</label>
         <div class="col-sm-10">
-          <input type="number" step="1" min="1" max="5" class="form-control" placeholder="La note" [(ngModel)]="formOrigami.note"
+          <input type="number" step="1" min="1" max="5" class="form-control" placeholder="La note"
+                 [(ngModel)]="formOrigami.note"
                  [ngModelOptions]="{standalone: true}" required/>
         </div>
       </div>
@@ -84,7 +87,7 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Actif ?</label>
         <div class="col-sm-10">
-          <select class= "custom-select"[(ngModel)]="formOrigami.actif" [ngModelOptions]="{standalone: true}">
+          <select class="custom-select" [(ngModel)]="formOrigami.actif" [ngModelOptions]="{standalone: true}">
             <option value="true">oui</option>
             <option value="false">non</option>
           </select>
@@ -108,6 +111,20 @@
         </div>
       </div>
 
+      <!--[ngModel]="formOrigami.categories | dropdownList"-->
+      <!--(ngModelChange)="formOrigami.categories"-->
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Catégorie(s)</label>
+        <div class="col-sm-10">
+          <angular2-multiselect [data]="listCategorie() | dropdownList" [(ngModel)]="selectedItems"
+                                [settings]="dropdownSettings"
+                                [ngModelOptions]="{standalone: true}">
+
+          </angular2-multiselect>
+        </div>
+      </div>
+
+
       <div class="form-group row">
         <div class="col-sm-2"></div>
         <div class="col-sm-7">
@@ -117,6 +134,7 @@
           <a id="boutonAnnuler" class="btn btn col-sm-12" (click)="cancel()">Annuler</a>
         </div>
       </div>
+
 
     </form>
   </section>

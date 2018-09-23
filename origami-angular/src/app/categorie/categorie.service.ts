@@ -10,13 +10,13 @@ export class CategorieService {
   categoriesChildren: Array<Categorie> = new Array<Categorie>();
   apiUrl = '';
 
+
   constructor(private http: Http, private urlService: AppConfigService) {
     this.apiUrl = this.urlService.apiUrl + '/categorie/';
     this.http
       .get(this.apiUrl)
-      .subscribe(resp =>
-          this.categories = resp.json(),
-        err => console.log(err)
+      .subscribe(resp => this.categories = resp.json()
+        , err => console.log(err)
       );
     this.http
       .get(this.apiUrl + '/children')
@@ -41,8 +41,9 @@ export class CategorieService {
 
       this.categoriesParent = Object.assign([], this.categories);
 
-      for (const cat of descendants) {
-        const pos: number = this.categories.indexOf(cat);
+      for (let cat of descendants) {
+        cat = this.findById(cat.id);
+        const pos: number = this.categoriesParent.indexOf(cat);
         this.categoriesParent.splice(pos, 1);
       }
 
@@ -94,9 +95,7 @@ export class CategorieService {
 
   public save(categorie: Categorie) {
     if (categorie) {
-      console.log(categorie);
       if (!categorie.superCat.id || categorie.superCat.id.toString() === 'null') {
-        console.log('je suis passé par là');
         categorie.superCat = null;
       }
       if (!categorie.id) {

@@ -15,6 +15,8 @@ import {CategorieService} from './categorie/categorie.service';
 import {NavbarComponent} from './navbar/navbar.component';
 import {OrigamiService} from './origami/origami.service';
 import {CategorieDetailComponent} from './categorie/categorie-detail.component';
+import {AngularMultiSelectModule} from 'angular2-multiselect-dropdown';
+import {DropdownListPipe} from './dropdown-list.pipe';
 
 
 const routes: Routes = [
@@ -25,7 +27,8 @@ const routes: Routes = [
   {path: 'origami/detail', component: EtapeComponent},
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: '**', redirectTo: 'home', pathMatch: 'full'},
+  {path: '**', redirectTo: 'home', pathMatch: 'full'}
+
 ]
 
 @NgModule({
@@ -37,13 +40,15 @@ const routes: Routes = [
     HomeComponent,
     OrigamiComponent,
     NavbarComponent,
-    CategorieDetailComponent
+    CategorieDetailComponent,
+    DropdownListPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AngularMultiSelectModule
   ],
   providers: [
     AppConfigService,

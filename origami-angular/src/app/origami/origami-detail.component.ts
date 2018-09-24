@@ -8,15 +8,16 @@ import {OrigamiService} from './origami.service';
 })
 
 export class OrigamiDetailComponent implements OnInit {
-  private origami: Origami = new Origami ();
+  private origami: Origami = new Origami();
 
-  constructor(private route: ActivatedRoute, private origamiService: OrigamiService ){
+  constructor(private route: ActivatedRoute, private origamiService: OrigamiService) {
     this.route.params.subscribe(params => {
       console.log(params['id']);
-      this.origamiService
-        .findById (Number(params['id']), true)
+      this.origamiService.findById(Number(params['id']), true)
         .subscribe(resp => this.origami = resp.json());
     });
   }
-  ngOnInit(){}
+
+  ngOnInit() {
+  }
 }

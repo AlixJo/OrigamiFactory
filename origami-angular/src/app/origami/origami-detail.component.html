@@ -33,16 +33,16 @@
     </tbody>
   </table>
 
-  <h2>Liste des étapes</h2>
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>Id</th>
-      <th>Username</th>
-    </tr>
-    </thead>
+  <!--<h2>Liste des étapes</h2>-->
+  <!--<table class="table table-striped">-->
+    <!--<thead>-->
+    <!--<tr>-->
+      <!--<th>Id</th>-->
+      <!--<th>Username</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
 
-  <h2>Liste des étapes/h2>
+  <h2>Liste des étapes</h2>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -54,10 +54,10 @@
     </thead>
     <tbody>
     <tr *ngFor="let etape of origami.etapes">
-      <td>{{origami.etape.id}}</td>
-      <td>{{origami.etape.numeroEtape}}</td>
-      <td>{{origami.etape.description}}</td>
-      <td>{{origami.etape.imageEtape}}</td>
+      <td>{{etape.id}}</td>
+      <td>{{etape.numeroEtape}}</td>
+      <td>{{etape.description}}</td>
+      <td>{{etape.imageEtape}}</td>
 
     </tr>
     </tbody>

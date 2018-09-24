@@ -1,4 +1,5 @@
-<div class="container">
+<div id="fondOrigami"></div>
+<div class="container" >
   <br>
   <h1>ORIGAMI</h1>
 
@@ -20,7 +21,7 @@
       <tr *ngFor="let origami of list()">
         <td>{{origami.id}}</td>
         <td>{{origami.nom}}</td>
-        <td><a class="boutonEditer btn"  (click)="edit(origami.id)">Editer</a></td>
+        <td><a class="boutonEditer btn" (click)="edit(origami.id)">Editer</a></td>
         <td><a class="boutonDetail btn" [routerLink]="['/origami/'+origami.id]" >Détail</a></td>
         <td><a class="boutonSup btn" (click)="delete(origami.id)">Supprimer</a></td>
       </tr>

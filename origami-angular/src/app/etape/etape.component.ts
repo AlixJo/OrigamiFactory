@@ -23,8 +23,8 @@ export class EtapeComponent implements OnInit {
   }
 
 
-  public addEtape() {
-    this.formEtape = new Etape();
+  public addEtape(id: number) {
+    this.formEtape = new Etape()
 
   }
 

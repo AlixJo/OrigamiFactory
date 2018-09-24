@@ -12,15 +12,13 @@ import {Etape} from '../etape/etape';
 export class OrigamiDetailComponent implements OnInit {
   private origami: Origami = new Origami();
   private etape: Etape = new Etape();
+  private formEtape: Etape = null;
 
   constructor(private route: ActivatedRoute, private origamiService: OrigamiService, private etapeService: EtapeService) {
     this.route.params.subscribe(params => {
       console.log(params['id']);
       this.origamiService.findById(Number(params['id']), true)
         .subscribe(resp => this.origami = resp.json());
-
-      //this.etapeService.findById(Number(params['id']), true)
-      //  .subscribe(resp => this.etape = resp.json());
     });
 
 
@@ -29,6 +27,42 @@ export class OrigamiDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  public listEtape() {
+    return this.origami.etapes;
+  }
+
+  public addEtape(id: number) {
+    this.formEtape = new Etape();
+
+  }
+
+  public editEtape(id: number) {
+    this.formEtape = this.etapeService.findById(id);
+  }
+
+  public saveEtape() {
+
+    this.formEtape.origami = this.origami;
+    this.etapeService.saveEtape(this.formEtape);
+
+    this.formEtape = null;
+
+    // refresh
+    // this.origamiService.findById(this.origami.id, true)
+    //   .subscribe(resp => this.origami = resp.json());
+  }
+
+  public deleteEtape(id: number) {
+    this.etapeService.deleteEtape(this.etapeService.findById(id));
+
+    // refresh
+    // this.origamiService.findById(this.origami.id, true)
+    //   .subscribe(resp => this.origami = resp.json());
+  }
+
+  public cancelEtape() {
+    this.formEtape = null;
+  }
 
 
 }

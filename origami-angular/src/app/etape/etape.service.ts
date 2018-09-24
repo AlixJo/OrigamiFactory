@@ -11,7 +11,7 @@ export class EtapeService {
   apiUrl = '';
 
   constructor(private http: Http, private urlService: AppConfigService) {
-    this.apiUrl = this.urlService.apiUrl + '/origami/detail';
+    this.apiUrl = this.urlService.apiUrl + '/etape/';
     this.http
       .get(this.apiUrl)
       .subscribe(resp =>
@@ -40,8 +40,6 @@ export class EtapeService {
   public saveEtape(etape: Etape) {
     if (etape) {
       if (!etape.id) {
-
-
         this.http
           .post(this.apiUrl, etape)
           .subscribe(

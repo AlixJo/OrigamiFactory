@@ -33,16 +33,9 @@
     </tbody>
   </table>
 
-  <h2>Liste des étapes</h2>
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>Id</th>
-      <th>Username</th>
-    </tr>
-    </thead>
 
-  <h2>Liste des étapes/h2>
+
+  <h2>Liste des étapes</h2>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -60,6 +53,44 @@
       <td>{{origami.etape.imageEtape}}</td>
 
     </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
+
+
+<div class="container" id="ecriture">
+  <br>
+  <h1>ORIGAMI</h1>
+
+  <button id="boutonAjouter" type="button" class="btn btn">AJOUTER UNE ETAPE</button>
+  <br>
+  <br>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>IDENTIFIANT</th>
+      <th>NUMERO DE L'ETAPE</th>
+      <th>DESCRIPTION</th>
+      <th>IMAGE DE L'ETAPE</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let origami of list()" >
+      <td>{{origami.etape.id}}</td>
+      <td>{{origami.etape.numeroEtape}}</td>
+      <td>{{origami.etape.description}}</td>
+      <td>{{origami.etape.imageEtape}}</td>
+      <td><a id="boutonEditer" class="btn btn" (click)="edit(origami.id)">Editer</a></td>
+      <td><a id="boutonDetail" class="btn btn" >Détail</a></td>
+      <td><a id="boutonSup" class="btn btn" (click)="delete(origami.id)">Supprimer</a></td>
+    </tr>
+
     </tbody>
   </table>
 

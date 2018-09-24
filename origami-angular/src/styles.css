@@ -1,0 +1,62 @@
+.boutonAjouter {
+  background-color: #f8bbd0;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  font-size: 10px;
+}
+
+h1 {
+  display: inline;
+}
+
+.ecriture {
+  font-style: oblique;
+  font-family: serif;
+}
+
+.boutonEditer {
+  background-color: #80cbc4;
+}
+
+.boutonSup {
+  background-color: #d6d6d6;
+}
+
+.boutonDetail {
+  background-color: #abdde5;
+}
+
+.boutonAnnuler {
+  background-color: #d6d6d6;
+}
+
+.boutonEnvoyer {
+  background-color: #c8e6c9 ;
+}
+
+#fondOrigami {
+  background: url("https://i.ytimg.com/vi/-58H-JgmwrA/maxresdefault.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.2;
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+}
+
+#fondCategorie {
+  background: url("http://santehnica.pro/wp-content/uploads/2018/07/origami-t-rex-designed-by-me-i-modified-whole-proportion-and-standardized-hind-legs-and-tail-since-previous-a-origami-t-origami-tyrannosaurus-rex-by-fernando-gilgado.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.2;
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+}
+
+#ecritureHome {
+  font-family: "Apple Chancery", Times, cursive;
+  margin-left: 20%;
+}

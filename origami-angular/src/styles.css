@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+
+.boutonAjouter {
+  background-color: #f8bbd0;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  font-size: 10px;
+}
+
+h1 {
+  display: inline;
+}
+
+.ecriture {
+  font-style: oblique;
+  font-family: serif;
+}
+
+.boutonEditer {
+  background-color: #80cbc4;
+}
+
+.boutonSup {
+  background-color: #d6d6d6;
+}
+
+.boutonDetail {
+  background-color: #abdde5;
+}
+
+.boutonAnnuler {
+  background-color: #d6d6d6;
+}
+
+.boutonEnvoyer {
+  background-color: #c8e6c9 ;
+}

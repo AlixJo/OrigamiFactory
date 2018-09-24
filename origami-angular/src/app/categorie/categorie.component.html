@@ -1,7 +1,7 @@
-<div class="container" id="ecriture">
+<div class="container">
   <br>
-  <h1 >CATEGORIE</h1>
-  <button id="boutonAjouter" type="button" class="btn btn" (click)="add()">AJOUTER UNE CATEGORIE</button>
+  <h1 >CATÉGORIE</h1>
+  <button class="boutonAjouter btn" type="button" (click)="add()">AJOUTER UNE CATEGORIE</button>
   <br>
   <br>
   <section *ngIf="list().length > 0">
@@ -19,9 +19,9 @@
       <tr *ngFor="let categorie of list()">
         <td>{{categorie.id}}</td>
         <td>{{categorie.nom}}</td>
-        <td><a id="boutonEditer" class="btn btn" (click)="edit(categorie.id)">Editer</a></td>
-        <td><a id="boutonDetail" class="btn btn" [routerLink]="['/categorie/'+categorie.id]" >Détail</a></td>
-        <td><a id="boutonSup" class="btn btn" (click)="delete(categorie.id)">Supprimer</a></td>
+        <td><a class="boutonEditer btn" (click)="edit(categorie.id)">Editer</a></td>
+        <td><a class="boutonDetail btn" [routerLink]="['/categorie/'+categorie.id]" >Détail</a></td>
+        <td><a class="boutonSup btn" (click)="delete(categorie.id)">Supprimer</a></td>
       </tr>
       </tbody>
     </table>
@@ -54,10 +54,10 @@
       <div class="form-group row">
         <div class="col-sm-2"></div>
         <div class="col-sm-7">
-          <button id="boutonEnvoyer" type="submit" class="btn btn col-sm-12" (click)="save()">Envoyer</button>
+          <button class="boutonEnvoyer btn btn col-sm-12" type="submit" (click)="save()">Envoyer</button>
         </div>
         <div class="col-sm-3">
-          <a id="boutonAnnuler" class="btn btn col-sm-12" (click)="cancel()">Annuler</a>
+          <a class="boutonAnnuler btn btn col-sm-12" (click)="cancel()">Annuler</a>
         </div>
       </div>
 

@@ -1,8 +1,8 @@
-<div class="container" id="ecriture">
+<div class="container">
   <br>
   <h1>ORIGAMI</h1>
 
-  <button id="boutonAjouter" type="button" class="btn btn" (click)="add()">AJOUTER UN ORIGAMI</button>
+  <button class="boutonAjouter btn" type="button" (click)="add()">AJOUTER UN ORIGAMI</button>
   <br>
   <br>
   <section *ngIf="list().length > 0">
@@ -20,9 +20,9 @@
       <tr *ngFor="let origami of list()">
         <td>{{origami.id}}</td>
         <td>{{origami.nom}}</td>
-        <td><a id="boutonEditer" class="btn btn" (click)="edit(origami.id)">Editer</a></td>
-        <td><a id="boutonDetail" class="btn btn">Détail</a></td>
-        <td><a id="boutonSup" class="btn btn" (click)="delete(origami.id)">Supprimer</a></td>
+        <td><a class="boutonEditer btn"  (click)="edit(origami.id)">Editer</a></td>
+        <td><a class="boutonDetail btn" >Détail</a></td>
+        <td><a class="boutonSup btn"  (click)="delete(origami.id)">Supprimer</a></td>
       </tr>
       </tbody>
     </table>
@@ -65,10 +65,10 @@
         <label class="col-sm-2 col-form-label">Niveau</label>
         <div class="col-sm-10">
           <select class="custom-select" [(ngModel)]="formOrigami.niveau" [ngModelOptions]="{standalone: true}">
-            <option value="occasionnel">occasionnel</option>
-            <option value="normal">normal</option>
-            <option value="avance">avance</option>
-            <option value="expert">expert</option>
+            <option value="occasionnel">Occasionnel</option>
+            <option value="normal">Normal</option>
+            <option value="avance">Avancé</option>
+            <option value="expert">Expert</option>
           </select>
         </div>
       </div>
@@ -88,8 +88,8 @@
         <label class="col-sm-2 col-form-label">Actif ?</label>
         <div class="col-sm-10">
           <select class="custom-select" [(ngModel)]="formOrigami.actif" [ngModelOptions]="{standalone: true}">
-            <option value="true">oui</option>
-            <option value="false">non</option>
+            <option value="true">Oui</option>
+            <option value="false">Non</option>
           </select>
         </div>
       </div>
@@ -111,8 +111,7 @@
         </div>
       </div>
 
-      <!--[ngModel]="formOrigami.categories | dropdownList"-->
-      <!--(ngModelChange)="formOrigami.categories"-->
+
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Catégorie(s)</label>
         <div class="col-sm-10">
@@ -128,10 +127,10 @@
       <div class="form-group row">
         <div class="col-sm-2"></div>
         <div class="col-sm-7">
-          <button id="boutonEnvoyer" type="" class="btn btn col-sm-12" (click)="save()">Envoyer</button>
+          <button class="boutonEnvoyer btn btn col-sm-12" type="" (click)="save()">Envoyer</button>
         </div>
         <div class="col-sm-3">
-          <a id="boutonAnnuler" class="btn btn col-sm-12" (click)="cancel()">Annuler</a>
+          <a class="boutonAnnuler btn btn col-sm-12" (click)="cancel()">Annuler</a>
         </div>
       </div>
 

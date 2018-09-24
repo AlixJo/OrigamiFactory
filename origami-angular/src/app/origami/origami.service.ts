@@ -23,11 +23,10 @@ export class OrigamiService {
   }
 
   public findById(id: number, details?: boolean): any {
-    // if (details) {
-    //  return this.http
-    //    .get(this.apiUrl + id)
-    //    .subscribe(resp => resp.json());
-
+    if (details) {
+      return this.http
+        .get(this.apiUrl + id);
+    }
     for (const origami of this.origamis) {
       if (origami.id === id) {
         return origami;

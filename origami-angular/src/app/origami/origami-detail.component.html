@@ -1,0 +1,66 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Identifiant</th>
+      <th>Nom</th>
+      <th>Temps de réalisation</th>
+      <th>Nombre de feuilles</th>
+      <th>Niveau</th>
+      <th>Note</th>
+      <th>Actif</th>
+      <th>Youtube</th>
+      <th>Image de l'Origami</th>
+
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr >
+      <td>{{origami.id}}</td>
+      <td>{{origami.nom}}</td>
+      <td>{{origami.tempsRea}}</td>
+      <td>{{origami.nbFeuille}}</td>
+      <td>{{origami.niveau}}</td>
+      <td>{{origami.note}}</td>
+      <td>{{origami.actif}}</td>
+      <td>{{origami.youTube}}</td>
+      <td>{{origami.imageOri}}</td>
+
+    </tr>
+
+    </tbody>
+  </table>
+
+  <!--<h2>Liste des étapes</h2>-->
+  <!--<table class="table table-striped">-->
+    <!--<thead>-->
+    <!--<tr>-->
+      <!--<th>Id</th>-->
+      <!--<th>Username</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+
+  <h2>Liste des étapes</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Identifiant</th>
+      <th>Numéro Etape</th>
+      <th>Description</th>
+      <th>Image Etape</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let etape of origami.etapes">
+      <td>{{etape.id}}</td>
+      <td>{{etape.numeroEtape}}</td>
+      <td>{{etape.description}}</td>
+      <td>{{etape.imageEtape}}</td>
+
+    </tr>
+    </tbody>
+  </table>
+
+</div>

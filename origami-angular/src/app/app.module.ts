@@ -20,6 +20,7 @@ import {AdminService} from './admin/admin.service';
 import {CategorieDetailComponent} from './categorie/categorie-detail.component';
 import {AngularMultiSelectModule} from 'angular2-multiselect-dropdown';
 import {DropdownListPipe} from './dropdown-list.pipe';
+import {OrigamiDetailComponent} from './origami/origami-detail.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'categorie', component: CategorieComponent},
   {path: 'categorie/:id', component: CategorieDetailComponent},
   {path: 'origami', component: OrigamiComponent},
+  {path: 'origami/:id', component: OrigamiDetailComponent},
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'home', pathMatch: 'full'}
@@ -44,6 +46,7 @@ const routes: Routes = [
     NavbarComponent,
     DropdownListPipe,
     CategorieDetailComponent,
+    DropdownListPipe,
     OrigamiDetailComponent
   ],
   imports: [

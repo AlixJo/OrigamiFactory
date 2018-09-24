@@ -20,9 +20,9 @@
       <tr *ngFor="let origami of list()">
         <td>{{origami.id}}</td>
         <td>{{origami.nom}}</td>
-        <td><a class="boutonEditer btn"  (click)="edit(origami.id)">Éditer</a></td>
-        <td><a class="boutonDetail btn" >Détail</a></td>
-        <td><a class="boutonSup btn"  (click)="delete(origami.id)">Supprimer</a></td>
+        <td><a id="boutonEditer" class="btn btn" (click)="edit(origami.id)">Editer</a></td>
+        <td><a id="boutonDetail" class="btn btn" [routerLink]="['/origami/'+origami.id]" >Détail</a></td>
+        <td><a id="boutonSup" class="btn btn" (click)="delete(origami.id)">Supprimer</a></td>
       </tr>
       </tbody>
     </table>

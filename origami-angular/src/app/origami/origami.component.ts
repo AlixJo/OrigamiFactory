@@ -4,6 +4,7 @@ import {Categorie} from '../categorie/categorie';
 import {CategorieService} from '../categorie/categorie.service';
 import {ItemDropdown} from '../item-dropdown';
 import {DropdownListPipe} from '../dropdown-list.pipe';
+import {Origami} from './origami';
 
 @Component({
   selector: 'app-origami',

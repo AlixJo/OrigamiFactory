@@ -42,7 +42,7 @@ const routes: Routes = [
     HomeComponent,
     OrigamiComponent,
     NavbarComponent,
-    DropdownListPipe
+    DropdownListPipe,
     CategorieDetailComponent,
     OrigamiDetailComponent
   ],

@@ -108,6 +108,11 @@
         <div class="col-sm-10">
           <input type="text" class="form-control" placeholder="L'image de l'origami" [(ngModel)]="formOrigami.imageOri"
                  [ngModelOptions]="{standalone: true}" required/>
+
+          <div *ngIf="formOrigami.imageOri">
+            <br/>
+          <img src="{{formOrigami.imageOri}}"  class="center" width="200">
+          </div>
         </div>
       </div>
 

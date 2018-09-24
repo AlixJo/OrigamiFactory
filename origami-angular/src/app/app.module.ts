@@ -14,7 +14,6 @@ import {AppConfigService} from './app-config.service';
 import {CategorieService} from './categorie/categorie.service';
 import {NavbarComponent} from './navbar/navbar.component';
 import {OrigamiService} from './origami/origami.service';
-import {OrigamiDetailComponent} from './origami-detail/origami-detail.component';
 import {EtapeService} from './etape/etape.service';
 import {AdminService} from './admin/admin.service';
 import {CategorieDetailComponent} from './categorie/categorie-detail.component';
